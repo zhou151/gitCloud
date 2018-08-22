@@ -4,11 +4,11 @@ ssh -T git@github.com   //连接
 
 git init //初始化
 
-git remote set-url origin git@github.com:zhou151/gitCloud.git //设置仓库地址
-
-git remote add origin git@github.com:tianqixin/runoob-git-test.git  //添加仓库
-
 git remote rm origin     //删除origin
+
+git remote set-url origin git@github.com:zhou151/gitCloud.git //设置仓库关联
+
+git remote add origin git@github.com:tianqixin/runoob-git-test.git  //添加仓库关联
 
 git add . //添加所有文件到暂存区,未提交
 
@@ -18,13 +18,13 @@ ls  //查看当前文件夹下所有文件
 
 git commit -m '测试提交'  //提交暂存区的所有内容提交到当前分支上
 
+git push -u origin master  //将本地项目推到远程仓库
+
 git pull --rebase origin master  //合并远程+本地
 
 git remote -v  //仓库列表
 
 git pull origin master //先拉下来，会自动合并的（不用操心）
-
-git push -u origin master  //上传
 
 git log //查看历史修改log
 
