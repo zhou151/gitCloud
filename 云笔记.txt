@@ -1,37 +1,44 @@
-git config --global user.name "zhou151"
+git config --global user.name "zhou151"              //设置用户名
 
-git config --global user.email "1045907858@qq.com"
+git config --global user.email "1045907858@qq.com"  //设置邮件
 
 ssh-keygen -t rsa -C 1045907858@qq.com  //生成密匙，在git bash里生成
 
-ssh -T git@github.com   //连接
+git init //初始化,本地第一次使用
 
-git init //初始化
-
-         ------ git remote rm origin     //删除origin,不常用---------
+ssh -T git@github.com   //连接ssh      
+-------------------------------------------------------------------------------------
+         
+git add . //添加所有文件到暂存区,未提交
 
 git remote add origin git@github.com:zhou151/gitCloud.git   //添加仓库关联
 
-git add . //添加所有文件到暂存区,未提交
-
 git status  //查看提交状态
 
-ls  //查看当前文件夹下所有文件
-
 git commit -m '测试提交'  //提交暂存区的所有内容提交到当前分支上
+-------------------------------------------------------------------------------------
 
 git push -u origin master  //将本地项目推到远程仓库,-----仅限制为第一次上传项目----
 
-git pull origin master //将本地项目推到远程仓库,不是第一次!
-
 git clone git@github.com:zhou151/gitCloud.git  //克隆云项目到本地
 
-git pull --rebase origin master  //合并远程+本地
+-------------------------------------------------------------------------------------
+git log //查看历史修改log
 
 git remote -v  //仓库列表
+-------------------------------------------------------------------------------------
+
+git merge origin/master  //合并远程+本地
+
+git pull origin master //将本地项目推到远程仓库,不是第一次!
 
 git fetch origin master  //将远程修改更新到本地
+-------------------------------------------------------------------------------------
 
-git log //查看历史修改log
+
+         ---------------------------不常用--------------------------
+         ------ git remote rm origin     //删除origin,不常用---------
+         ------ls  //查看当前文件夹下所有文件-------------------------
+         ---------------------------不常用--------------------------   
 
 
