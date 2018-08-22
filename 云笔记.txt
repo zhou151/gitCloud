@@ -1,3 +1,5 @@
+ssh-keygen -t rsa -C 1045907858@qq.com  //生成密匙，在git bash里生成
+
 ssh -T git@github.com   //连接
 
 git init //初始化
