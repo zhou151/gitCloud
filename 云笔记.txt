@@ -18,7 +18,7 @@ ls  //查看当前文件夹下所有文件
 
 git commit -m '测试提交'  //提交暂存区的所有内容提交到当前分支上
 
-git push -u origin master  //将本地项目推到远程仓库
+git push -u origin master  //将本地项目推到远程仓库,-----仅限制为第一次上传项目----
 
 git pull --rebase origin master  //合并远程+本地
 
