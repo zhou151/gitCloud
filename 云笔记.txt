@@ -8,9 +8,7 @@ ssh -T git@github.com   //连接
 
 git init //初始化
 
-         ------ git remote rm origin     //删除origin
-
-         ------git remote set-url origin git@github.com:zhou151/gitCloud.git //设置仓库关联
+         ------ git remote rm origin     //删除origin,不常用---------
 
 git remote add origin git@github.com:zhou151/gitCloud.git   //添加仓库关联
 
@@ -32,7 +30,7 @@ git pull --rebase origin master  //合并远程+本地
 
 git remote -v  //仓库列表
 
-
+git fetch origin master  //将远程修改更新到本地
 
 git log //查看历史修改log
 
