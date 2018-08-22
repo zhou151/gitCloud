@@ -20,13 +20,12 @@ git commit -m '测试提交'  //提交暂存区的所有内容提交到当前分
 
 git push -u origin master  //将本地项目推到远程仓库,-----仅限制为第一次上传项目----
 
-git clone git@github.com:zhou151/gitCloud.git  //克隆云项目到本地
-
 -------------------------------------------------------------------------------------
 git log //查看历史修改log
 
 git remote -v  //仓库列表
 -------------------------------------------------------------------------------------
+git clone git@github.com:zhou151/gitCloud.git  //克隆云项目到本地
 
 git merge origin/master  //合并远程+本地
 
