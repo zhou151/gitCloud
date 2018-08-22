@@ -1,12 +1,16 @@
+git config --global user.name "zhou151"
+
+git config --global user.email "1045907858@qq.com"
+
 ssh-keygen -t rsa -C 1045907858@qq.com  //生成密匙，在git bash里生成
 
 ssh -T git@github.com   //连接
 
 git init //初始化
 
-git remote rm origin     //删除origin
+         ------ git remote rm origin     //删除origin
 
-git remote set-url origin git@github.com:zhou151/gitCloud.git //设置仓库关联
+         ------git remote set-url origin git@github.com:zhou151/gitCloud.git //设置仓库关联
 
 git remote add origin git@github.com:zhou151/gitCloud.git   //添加仓库关联
 
@@ -20,11 +24,15 @@ git commit -m '测试提交'  //提交暂存区的所有内容提交到当前分
 
 git push -u origin master  //将本地项目推到远程仓库,-----仅限制为第一次上传项目----
 
+git pull origin master //将本地项目推到远程仓库,不是第一次!
+
+git clone git@github.com:zhou151/gitCloud.git  //克隆云项目到本地
+
 git pull --rebase origin master  //合并远程+本地
 
 git remote -v  //仓库列表
 
-git pull origin master //先拉下来，会自动合并的（不用操心）
+
 
 git log //查看历史修改log
 
