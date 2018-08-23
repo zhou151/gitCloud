@@ -29,7 +29,7 @@ git clone git@github.com:zhou151/gitCloud.git  //克隆云项目到本地
 
 git merge origin/master  //合并远程+本地
 
-git pull origin master //将本地项目推到远程仓库,不是第一次!
+git pull origin master //将本地项目推到远程仓库,不是第一次! git pull 也可以
 
 git fetch origin master  //将远程修改更新到本地
 -------------------------------------------------------------------------------------
