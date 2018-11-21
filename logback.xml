@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">  
+  	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>    
+  	<property name="MY_LOGBACK" value="myLogback" />
+	<contextName>${MY_LOGBACK}</contextName>  
+	<property name="LOG_PATH" value="${catalina.base}/logs" />
+	<property name="LOG_INFO_PATH" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n" />
+	
+	<!-- 拦截全部日志级别并且生成文件 -->
+	<appender name="ALL_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+            <fileNamePattern>${LOG_PATH}/ALL_LOG/log-%d{yyyy-MM-dd}.log </fileNamePattern>  
+            <maxHistory>60</maxHistory>  
+        </rollingPolicy>  
+        <encoder>  
+            <pattern>${LOG_INFO_PATH}</pattern>  
+        </encoder>  
+	</appender>
+	
+	<!-- INFO 日志级别拦截 -->	
+	<appender name="INFO_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+            <fileNamePattern>${LOG_PATH}/INFO_LOG/log-%d{yyyy-MM-dd}.log </fileNamePattern>  
+            <maxHistory>60</maxHistory>  
+        </rollingPolicy>  
+        <encoder>  
+            <pattern>${LOG_INFO_PATH}</pattern>  
+        </encoder>  
+	</appender>
+	
+	<!-- EEROR 日志级别拦截 -->	
+	<appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+            <fileNamePattern>${LOG_PATH}/ERROR_LOG/log-%d{yyyy-MM-dd}.log </fileNamePattern>  
+            <maxHistory>60</maxHistory>  
+        </rollingPolicy>  
+        <encoder>  
+            <pattern>${LOG_INFO_PATH}</pattern>  
+        </encoder>  
+	</appender>
+	
+	<!-- WARN_LOG 日志级别拦截 -->	
+	<appender name="WARN_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+            <fileNamePattern>${LOG_PATH}/WARN_LOG/log-%d{yyyy-MM-dd}.log </fileNamePattern>  
+            <maxHistory>60</maxHistory>  
+        </rollingPolicy>  
+        <encoder>  
+            <pattern>${LOG_INFO_PATH}</pattern>  
+        </encoder>  
+	</appender>
+	<!-- DEBUG_LOG 日志级别拦截 -->	
+	<appender name="DEBUG_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+            <fileNamePattern>${LOG_PATH}/DEBUG_LOG/log-%d{yyyy-MM-dd}.log </fileNamePattern>  
+            <maxHistory>60</maxHistory>  
+        </rollingPolicy>  
+        <encoder>  
+            <pattern>${LOG_INFO_PATH}</pattern>  
+        </encoder>  
+	</appender>
+	
+	<!-- 控制台打印日志 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">   
+	  <encoder>   
+	    <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - [%t] - %p - %c - %F - %m - %L - %n</pattern>   
+	  </encoder>   
+	</appender>  
+ 
+	<root level="DEBUG">             
+	  <appender-ref ref="STDOUT" />  
+	  <appender-ref ref="ALL_LOG" />  
+	  <appender-ref ref="INFO_LOG" /> 
+	  <appender-ref ref="ERROR_LOG" />  
+	  <appender-ref ref="WARN_LOG" />  
+	  <appender-ref ref="DEBUG_LOG" />  
+	</root>     
+</configuration> 
